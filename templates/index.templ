@@ -1,0 +1,23 @@
+package templates
+
+templ Index(images []string){
+    @image()
+    @list(images)
+    <script type="text/javascript" src="/assets/index.js" />
+}
+
+templ list(images []string) {
+    <nav id="list">
+    // for i := len(images)-1; i >= 0; i-- {
+    for _, image := range images {
+        <img src={image} class="image-item"/>
+    }
+    </nav>
+}
+
+templ image() {
+    <div id="image-container">
+        <span id="page-num"></span>
+        <div id="dest"></div>
+    </div>
+}

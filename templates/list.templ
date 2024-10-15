@@ -1,0 +1,24 @@
+package templates
+
+import "gollery/model"
+
+templ Body(component templ.Component) {
+    <head>
+        <link href="/assets/index.css" rel="stylesheet">
+    </head>
+    <body>
+        @component
+    </body>
+}
+
+templ List(dirs []model.Directory) {
+    <h1> list </h1>
+
+    <nav id="nav">
+    for _, d := range dirs {
+        <a href={ templ.URL("book/" + d.Name) }>
+            <img src={d.Image}>
+        </a>
+    }
+    </nav>
+}
