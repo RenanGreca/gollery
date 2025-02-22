@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM golang:alpine as build
+FROM --platform=$BUILDPLATFORM golang:alpine AS build
 
 ARG VERSION
 ARG TARGETOS
